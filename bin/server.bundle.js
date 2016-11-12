@@ -64,7 +64,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+	function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 	var app = new _koa2.default();
 	var router = (0, _koaRouter2.default)();
@@ -76,7 +76,7 @@
 	app
 	// Counting time
 	.use(function () {
-	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(ctx, next) {
+	  var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(ctx, next) {
 	    var start;
 	    return regeneratorRuntime.wrap(function _callee$(_context) {
 	      while (1) {
@@ -98,10 +98,10 @@
 	  }));
 
 	  return function (_x, _x2) {
-	    return ref.apply(this, arguments);
+	    return _ref.apply(this, arguments);
 	  };
 	}()).use(function () {
-	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(ctx, next) {
+	  var _ref2 = _asyncToGenerator(regeneratorRuntime.mark(function _callee2(ctx, next) {
 	    return regeneratorRuntime.wrap(function _callee2$(_context2) {
 	      while (1) {
 	        switch (_context2.prev = _context2.next) {
@@ -141,12 +141,12 @@
 	  }));
 
 	  return function (_x3, _x4) {
-	    return ref.apply(this, arguments);
+	    return _ref2.apply(this, arguments);
 	  };
 	}())
 	// Body parser
 	.use((0, _koaBodyparser2.default)()).use(function () {
-	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(ctx, next) {
+	  var _ref3 = _asyncToGenerator(regeneratorRuntime.mark(function _callee3(ctx, next) {
 	    return regeneratorRuntime.wrap(function _callee3$(_context3) {
 	      while (1) {
 	        switch (_context3.prev = _context3.next) {
@@ -166,7 +166,7 @@
 	  }));
 
 	  return function (_x5, _x6) {
-	    return ref.apply(this, arguments);
+	    return _ref3.apply(this, arguments);
 	  };
 	}())
 	// routes
@@ -279,7 +279,7 @@
 	  function BadRequest(message) {
 	    _classCallCheck(this, BadRequest);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BadRequest).call(this));
+	    var _this = _possibleConstructorReturn(this, (BadRequest.__proto__ || Object.getPrototypeOf(BadRequest)).call(this));
 
 	    _this.type = "Bad Request";
 	    _this.message = message;
@@ -296,7 +296,7 @@
 	  function DatabaseError(message) {
 	    _classCallCheck(this, DatabaseError);
 
-	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(DatabaseError).call(this));
+	    var _this2 = _possibleConstructorReturn(this, (DatabaseError.__proto__ || Object.getPrototypeOf(DatabaseError)).call(this));
 
 	    _this2.type = "Internal Server Error";
 	    _this2.message = message;
@@ -313,7 +313,7 @@
 	  function NotFound(message) {
 	    _classCallCheck(this, NotFound);
 
-	    var _this3 = _possibleConstructorReturn(this, Object.getPrototypeOf(NotFound).call(this));
+	    var _this3 = _possibleConstructorReturn(this, (NotFound.__proto__ || Object.getPrototypeOf(NotFound)).call(this));
 
 	    _this3.type = "Not found";
 	    _this3.message = message;

@@ -11,6 +11,12 @@ A simple boilerplate to create REST apps with
 
 Boilerplate is packed with [koa-router@next](https://github.com/alexmingoia/koa-router/tree/master/) in order to have a routing system.
 
+**Install development dependencies**
+
+```javascript
+npm i
+```
+
 **Create a route**
 
 ```javascript
@@ -18,6 +24,33 @@ router.get('/:id', async (ctx) => {
   ctx.body = await database.get(ctx.params.id);
   // Feel the awesomeness
 });
+```
+
+**Run development**
+
+```javascript
+npm run development
+```
+
+**Build**
+
+```javascript
+npm run build
+```
+
+**Run the built version**
+
+```javascript
+node bin/server.bundle.js
+// or
+npm run run
+```
+
+**Distribute and run the built file**
+
+```javascript
+npm i --production // to avoid dev dependencies
+npm run run
 ```
 
 ### Exceptions
